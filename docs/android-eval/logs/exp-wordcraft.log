@@ -1,0 +1,112 @@
+warning: patch `egui_demo_lib v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_extras v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_inspection v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_system_font_provider v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+    Checking wordcraft-geom v0.14.0 (~/wc-exp/crates/geom)
+    Checking ash v0.38.0+1.3.281
+    Checking write-fonts v0.48.1
+    Checking skrifa v0.42.1
+    Checking wordcraft-doc v0.14.0 (~/wc-exp/crates/doc)
+   Compiling zvariant_utils v4.2.0
+    Checking event-listener v5.4.2
+   Compiling android-activity v0.6.1
+   Compiling wgpu-hal v30.0.1
+    Checking wordcraft-metafile v0.14.0 (~/wc-exp/crates/metafile)
+    Checking concurrent-queue v2.5.0
+   Compiling serde_spanned v1.1.1
+    Checking tracing-core v0.1.36
+   Compiling tracing-attributes v0.1.31
+   Compiling proc-macro2 v1.0.107
+    Checking presser v0.3.1
+    Checking ndk-context v0.1.1
+   Compiling toml v1.1.6+spec-1.1.0
+    Checking gpu-allocator v0.28.0
+    Checking pdf-writer v0.15.0
+    Checking wordcraft-fonts v0.14.0 (~/wc-exp/crates/fonts)
+    Checking tiny-skia-path v0.12.0
+    Checking cfb v0.15.0
+    Checking event-listener-strategy v0.5.4
+    Checking subsetter v0.2.6
+    Checking ndk v0.9.0
+    Checking wgpu-naga-bridge v30.0.1
+    Checking khronos-egl v6.0.0
+    Checking futures-lite v2.6.1
+   Compiling wayland-backend v0.3.17
+   Compiling winit v0.30.13 (https://github.com/storytold/winit.git?rev=a517b3846ee8457d84ee4975110bfda6797c44dc#a517b384)
+    Checking float-cmp v0.9.0
+   Compiling zvariant_derive v5.15.0
+    Checking ordered-float v5.5.0
+   Compiling quote v1.0.47
+    Checking android-properties v0.2.2
+    Checking glow v0.17.0
+    Checking renderdoc-sys v1.1.0
+    Checking encoding_rs v0.8.42
+    Checking krilla v0.8.2 (https://github.com/storytold/craft-libs?rev=92d392cff132eaf53e13afff77f38b5c11b73aa0#92d392cf)
+    Checking wordcraft-layout v0.14.0 (~/wc-exp/crates/layout)
+error[E0583]: file not found for module `activity_impl`
+   --> $CARGO_REGISTRY/android-activity-0.6.1/src/lib.rs:381:1
+    |
+381 | pub(crate) mod activity_impl;
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+    = help: to create the module `activity_impl`, create file "$CARGO_REGISTRY/android-activity-0.6.1/src/activity_impl.rs" or "$CARGO_REGISTRY/android-activity-0.6.1/src/activity_impl/mod.rs"
+    = note: if there is a `mod activity_impl` elsewhere in the crate already, import it with `use crate::...` instead
+
+error: Either "game-activity" or "native-activity" must be enabled as features
+       
+       If you have set one of these features then this error indicates that Cargo is trying to
+       link together multiple implementations of android-activity (with incompatible versions)
+       which is not supported.
+       
+       Since android-activity is responsible for the `android_main` entrypoint of your application
+       then there can only be a single implementation of android-activity linked with your application.
+       
+       You can use `cargo tree` (e.g. via `cargo ndk -t arm64-v8a tree`) to identify why multiple
+       versions have been resolved.
+       
+       You may need to add a `[patch]` into your Cargo.toml to ensure a specific version of
+       android-activity is used across all of your application's crates.
+   --> $CARGO_REGISTRY/android-activity-0.6.1/src/lib.rs:352:1
+    |
+352 | / compile_error!(
+353 | |     r#"Either "game-activity" or "native-activity" must be enabled as features
+354 | |
+355 | | If you have set one of these features then this error indicates that Cargo is trying to
+...   |
+366 | | android-activity is used across all of your application's crates."#
+367 | | );
+    | |_^
+
+error[E0425]: cannot find type `PointerImpl` in this scope
+    --> $CARGO_REGISTRY/android-activity-0.6.1/src/input.rs:1343:23
+     |
+1343 |     pub(crate) inner: PointerImpl<'a>,
+     |                       ^^^^^^^^^^^ not found in this scope
+
+error[E0425]: cannot find type `PointersIterImpl` in this scope
+    --> $CARGO_REGISTRY/android-activity-0.6.1/src/input.rs:1440:23
+     |
+1440 |     pub(crate) inner: PointersIterImpl<'a>,
+     |                       ^^^^^^^^^^^^^^^^ not found in this scope
+
+error[E0425]: cannot find type `PointerHistoryIterImpl` in this scope
+    --> $CARGO_REGISTRY/android-activity-0.6.1/src/input.rs:1468:23
+     |
+1468 |     pub(crate) inner: PointerHistoryIterImpl<'a>,
+     |                       ^^^^^^^^^^^^^^^^^^^^^^ not found in this scope
+
+error[E0425]: cannot find type `HistoricalPointerImpl` in this scope
+    --> $CARGO_REGISTRY/android-activity-0.6.1/src/input.rs:1490:23
+     |
+1490 |     pub(crate) inner: HistoricalPointerImpl<'a>,
+     |                       ^^^^^^^^^^^^^^^^^^^^^ not found in this scope
+
+    Checking zip v3.0.0
+Some errors have detailed explanations: E0425, E0583.
+For more information about an error, try `rustc --explain E0425`.
+error: could not compile `android-activity` (lib) due to 6 previous errors
+warning: build failed, waiting for other jobs to finish...

@@ -1,0 +1,66 @@
+warning: patch `egui_demo_lib v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_extras v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_inspection v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_system_font_provider v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+    Checking read-fonts v0.41.0
+    Checking vello_common v0.2.0
+    Checking wordcraft-geom v0.14.0 (~/wc-exp/crates/geom)
+   Compiling wordcraft-fonts v0.14.0 (~/wc-exp/crates/fonts)
+    Checking wordcraft-doc v0.14.0 (~/wc-exp/crates/doc)
+    Checking wordcraft-metafile v0.14.0 (~/wc-exp/crates/metafile)
+   Compiling icu_locale_fallback_data v2.3.0
+    Checking subsetter v0.2.6
+    Checking craft-proof v0.1.0 (https://github.com/storytold/craft-libs?rev=6e45fda67c6d748b4775428cc495e26006a3bf4a#6e45fda6)
+    Checking zopfli v0.8.3
+    Checking emath v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)
+    Checking krilla v0.8.2 (https://github.com/storytold/craft-libs?rev=92d392cff132eaf53e13afff77f38b5c11b73aa0#92d392cf)
+    Checking icu_collections v2.3.0
+    Checking ecolor v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)
+    Checking parking_lot v0.12.5
+    Checking zip v3.0.0
+    Checking ahash v0.8.12
+    Checking fixed_decimal v0.7.3
+   Compiling zmij v1.0.23
+   Compiling winnow v1.0.4
+   Compiling toml_parser v1.1.3+spec-1.1.0
+    Checking craft-pdf v0.1.0 (https://github.com/storytold/craft-libs?rev=92d392cff132eaf53e13afff77f38b5c11b73aa0#92d392cf)
+    Checking icu_locale_fallback v2.3.0
+   Compiling toml_datetime v1.1.1+spec-1.1.0
+   Compiling serde_spanned v1.1.1
+    Checking accesskit v0.25.1
+   Compiling serde_json v1.0.154
+   Compiling itoa v1.0.18
+    Checking skrifa v0.44.0
+    Checking harfrust v0.12.0
+   Compiling memchr v2.8.3
+    Checking wordcraft-layout v0.14.0 (~/wc-exp/crates/layout)
+   Compiling toml_writer v1.1.2+spec-1.1.0
+    Checking glifo v0.3.0
+   Compiling toml v1.1.6+spec-1.1.0
+    Checking vello_cpu v0.2.0
+    Checking wordcraft-formats v0.14.0 (~/wc-exp/crates/formats)
+    Checking epaint v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)
+    Checking wordcraft-pdf v0.14.0 (~/wc-exp/crates/pdf)
+    Checking egui v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)
+    Checking wordcraft-render v0.14.0 (~/wc-exp/crates/render)
+    Checking wordcraft-docx v0.14.0 (~/wc-exp/crates/docx)
+    Checking wordcraft-docbin v0.14.0 (~/wc-exp/crates/docbin)
+    Checking icu_normalizer v2.3.0
+    Checking icu_properties v2.3.0
+    Checking icu_provider_adapters v2.3.0
+    Checking icu_decimal v2.3.0
+    Checking icu_plurals v2.3.0
+    Checking icu_provider_blob v2.3.0
+    Checking sys-locale v0.3.2
+    Checking wordcraft-engine v0.14.0 (~/wc-exp/crates/engine)
+    Checking craft-fonts-build v0.1.0 (https://github.com/storytold/craft-libs?rev=92d392cff132eaf53e13afff77f38b5c11b73aa0#92d392cf)
+    Checking craft-i18n v0.1.0 (https://github.com/storytold/craft-libs?rev=92d392cff132eaf53e13afff77f38b5c11b73aa0#92d392cf)
+    Checking craft-window v0.1.0 (https://github.com/storytold/craft-libs?rev=92d392cff132eaf53e13afff77f38b5c11b73aa0#92d392cf)
+    Checking craft-ui v0.1.0 (https://github.com/storytold/craft-libs?rev=92d392cff132eaf53e13afff77f38b5c11b73aa0#92d392cf)
+   Compiling wordcraft-ui-egui v0.14.0 (~/wc-exp/crates/ui-egui)
+    Checking wordcraft-zotero v0.14.0 (~/wc-exp/crates/zotero)
+    Finished `dev` profile [optimized + debuginfo] target(s) in 27.60s

@@ -1,0 +1,296 @@
+warning: patch `egui_demo_lib v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_extras v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_inspection v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_system_font_provider v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+    Checking egui-winit v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)
+    Checking wordcraft-ui-egui v0.14.0 (~/wc-exp/crates/ui-egui)
+    Checking rfd v0.17.2
+   Compiling wordcraft v0.14.0 (~/wc-exp/apps/wordcraft)
+    Checking wordcraft-control-key v0.14.0 (~/wc-exp/crates/control-key)
+    Checking arboard v3.7.0
+error[E0433]: cannot find `Clipboard` in `platform`
+  --> $CARGO_REGISTRY/arboard-3.7.0/src/lib.rs:82:38
+   |
+82 |         Ok(Clipboard { platform: platform::Clipboard::new()? })
+   |                                            ^^^^^^^^^ could not find `Clipboard` in `platform`
+
+error[E0433]: cannot find `Clear` in `platform`
+   --> $CARGO_REGISTRY/arboard-3.7.0/src/lib.rs:162:31
+    |
+162 |         Clear { platform: platform::Clear::new(&mut self.platform) }
+    |                                     ^^^^^ could not find `Clear` in `platform`
+
+error[E0433]: cannot find `Get` in `platform`
+   --> $CARGO_REGISTRY/arboard-3.7.0/src/lib.rs:167:29
+    |
+167 |         Get { platform: platform::Get::new(&mut self.platform) }
+    |                                   ^^^ could not find `Get` in `platform`
+
+error[E0433]: cannot find `Set` in `platform`
+   --> $CARGO_REGISTRY/arboard-3.7.0/src/lib.rs:172:29
+    |
+172 |         Set { platform: platform::Set::new(&mut self.platform) }
+    |                                   ^^^ could not find `Set` in `platform`
+
+error[E0425]: cannot find type `Clipboard` in module `platform`
+  --> $CARGO_REGISTRY/arboard-3.7.0/src/lib.rs:71:33
+   |
+71 |     pub(crate) platform: platform::Clipboard,
+   |                                    ^^^^^^^^^ not found in `platform`
+
+error[E0425]: cannot find type `Get` in module `platform`
+   --> $CARGO_REGISTRY/arboard-3.7.0/src/lib.rs:184:33
+    |
+184 |     pub(crate) platform: platform::Get<'clipboard>,
+    |                                    ^^^ not found in `platform`
+
+error[E0425]: cannot find type `Set` in module `platform`
+   --> $CARGO_REGISTRY/arboard-3.7.0/src/lib.rs:223:33
+    |
+223 |     pub(crate) platform: platform::Set<'clipboard>,
+    |                                    ^^^ not found in `platform`
+
+error[E0425]: cannot find type `Clear` in module `platform`
+   --> $CARGO_REGISTRY/arboard-3.7.0/src/lib.rs:269:33
+    |
+269 |     pub(crate) platform: platform::Clear<'clipboard>,
+    |                                    ^^^^^ not found in `platform`
+
+error[E0277]: the trait bound `FileDialog: AsyncFilePickerDialogImpl` is not satisfied
+   --> $CARGO_REGISTRY/rfd-0.17.2/src/file_dialog.rs:269:52
+    |
+269 |         AsyncFilePickerDialogImpl::pick_file_async(self.file_dialog)
+    |         ------------------------------------------ ^^^^^^^^^^^^^^^^ unsatisfied trait bound
+    |         |
+    |         required by a bound introduced by this call
+    |
+help: the trait `AsyncFilePickerDialogImpl` is not implemented for `FileDialog`
+   --> $CARGO_REGISTRY/rfd-0.17.2/src/file_dialog.rs:20:1
+    |
+ 20 | pub struct FileDialog {
+    | ^^^^^^^^^^^^^^^^^^^^^
+help: this trait has no implementations, consider adding one
+   --> $CARGO_REGISTRY/rfd-0.17.2/src/backend.rs:95:1
+    |
+ 95 | pub trait AsyncFilePickerDialogImpl {
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error[E0277]: the trait bound `FileDialog: AsyncFilePickerDialogImpl` is not satisfied
+   --> $CARGO_REGISTRY/rfd-0.17.2/src/file_dialog.rs:274:53
+    |
+274 |         AsyncFilePickerDialogImpl::pick_files_async(self.file_dialog)
+    |         ------------------------------------------- ^^^^^^^^^^^^^^^^ unsatisfied trait bound
+    |         |
+    |         required by a bound introduced by this call
+    |
+help: the trait `AsyncFilePickerDialogImpl` is not implemented for `FileDialog`
+   --> $CARGO_REGISTRY/rfd-0.17.2/src/file_dialog.rs:20:1
+    |
+ 20 | pub struct FileDialog {
+    | ^^^^^^^^^^^^^^^^^^^^^
+help: this trait has no implementations, consider adding one
+   --> $CARGO_REGISTRY/rfd-0.17.2/src/backend.rs:95:1
+    |
+ 95 | pub trait AsyncFilePickerDialogImpl {
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error[E0277]: the trait bound `FileDialog: AsyncFolderPickerDialogImpl` is not satisfied
+   --> $CARGO_REGISTRY/rfd-0.17.2/src/file_dialog.rs:282:56
+    |
+282 |         AsyncFolderPickerDialogImpl::pick_folder_async(self.file_dialog)
+    |         ---------------------------------------------- ^^^^^^^^^^^^^^^^ unsatisfied trait bound
+    |         |
+    |         required by a bound introduced by this call
+    |
+help: the trait `AsyncFolderPickerDialogImpl` is not implemented for `FileDialog`
+   --> $CARGO_REGISTRY/rfd-0.17.2/src/file_dialog.rs:20:1
+    |
+ 20 | pub struct FileDialog {
+    | ^^^^^^^^^^^^^^^^^^^^^
+help: this trait has no implementations, consider adding one
+   --> $CARGO_REGISTRY/rfd-0.17.2/src/backend.rs:102:1
+    |
+102 | pub trait AsyncFolderPickerDialogImpl {
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error[E0277]: the trait bound `FileDialog: AsyncFolderPickerDialogImpl` is not satisfied
+   --> $CARGO_REGISTRY/rfd-0.17.2/src/file_dialog.rs:290:57
+    |
+290 |         AsyncFolderPickerDialogImpl::pick_folders_async(self.file_dialog)
+    |         ----------------------------------------------- ^^^^^^^^^^^^^^^^ unsatisfied trait bound
+    |         |
+    |         required by a bound introduced by this call
+    |
+help: the trait `AsyncFolderPickerDialogImpl` is not implemented for `FileDialog`
+   --> $CARGO_REGISTRY/rfd-0.17.2/src/file_dialog.rs:20:1
+    |
+ 20 | pub struct FileDialog {
+    | ^^^^^^^^^^^^^^^^^^^^^
+help: this trait has no implementations, consider adding one
+   --> $CARGO_REGISTRY/rfd-0.17.2/src/backend.rs:102:1
+    |
+102 | pub trait AsyncFolderPickerDialogImpl {
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error[E0277]: the trait bound `FileDialog: AsyncFileSaveDialogImpl` is not satisfied
+   --> $CARGO_REGISTRY/rfd-0.17.2/src/file_dialog.rs:329:50
+    |
+329 |         AsyncFileSaveDialogImpl::save_file_async(self.file_dialog)
+    |         ---------------------------------------- ^^^^^^^^^^^^^^^^ unsatisfied trait bound
+    |         |
+    |         required by a bound introduced by this call
+    |
+help: the trait `AsyncFileSaveDialogImpl` is not implemented for `FileDialog`
+   --> $CARGO_REGISTRY/rfd-0.17.2/src/file_dialog.rs:20:1
+    |
+ 20 | pub struct FileDialog {
+    | ^^^^^^^^^^^^^^^^^^^^^
+help: this trait has no implementations, consider adding one
+   --> $CARGO_REGISTRY/rfd-0.17.2/src/backend.rs:115:1
+    |
+115 | pub trait AsyncFileSaveDialogImpl {
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error[E0277]: the trait bound `MessageDialog: AsyncMessageDialogImpl` is not satisfied
+   --> $CARGO_REGISTRY/rfd-0.17.2/src/message_dialog.rs:149:44
+    |
+149 |         AsyncMessageDialogImpl::show_async(self.0)
+    |         ---------------------------------- ^^^^^^ unsatisfied trait bound
+    |         |
+    |         required by a bound introduced by this call
+    |
+help: the trait `AsyncMessageDialogImpl` is not implemented for `MessageDialog`
+   --> $CARGO_REGISTRY/rfd-0.17.2/src/message_dialog.rs:15:1
+    |
+ 15 | pub struct MessageDialog {
+    | ^^^^^^^^^^^^^^^^^^^^^^^^
+help: this trait has no implementations, consider adding one
+   --> $CARGO_REGISTRY/rfd-0.17.2/src/backend.rs:119:1
+    |
+119 | pub trait AsyncMessageDialogImpl {
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error[E0277]: the trait bound `FileDialog: FilePickerDialogImpl` is not satisfied
+   --> $CARGO_REGISTRY/rfd-0.17.2/src/file_dialog.rs:123:41
+    |
+123 |         FilePickerDialogImpl::pick_file(self)
+    |         ------------------------------- ^^^^ unsatisfied trait bound
+    |         |
+    |         required by a bound introduced by this call
+    |
+help: the trait `FilePickerDialogImpl` is not implemented for `FileDialog`
+   --> $CARGO_REGISTRY/rfd-0.17.2/src/file_dialog.rs:20:1
+    |
+ 20 | pub struct FileDialog {
+    | ^^^^^^^^^^^^^^^^^^^^^
+help: this trait has no implementations, consider adding one
+   --> $CARGO_REGISTRY/rfd-0.17.2/src/backend.rs:55:1
+    |
+ 55 | pub trait FilePickerDialogImpl {
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error[E0277]: the trait bound `FileDialog: FilePickerDialogImpl` is not satisfied
+   --> $CARGO_REGISTRY/rfd-0.17.2/src/file_dialog.rs:128:42
+    |
+128 |         FilePickerDialogImpl::pick_files(self)
+    |         -------------------------------- ^^^^ unsatisfied trait bound
+    |         |
+    |         required by a bound introduced by this call
+    |
+help: the trait `FilePickerDialogImpl` is not implemented for `FileDialog`
+   --> $CARGO_REGISTRY/rfd-0.17.2/src/file_dialog.rs:20:1
+    |
+ 20 | pub struct FileDialog {
+    | ^^^^^^^^^^^^^^^^^^^^^
+help: this trait has no implementations, consider adding one
+   --> $CARGO_REGISTRY/rfd-0.17.2/src/backend.rs:55:1
+    |
+ 55 | pub trait FilePickerDialogImpl {
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error[E0277]: the trait bound `FileDialog: FolderPickerDialogImpl` is not satisfied
+   --> $CARGO_REGISTRY/rfd-0.17.2/src/file_dialog.rs:133:45
+    |
+133 |         FolderPickerDialogImpl::pick_folder(self)
+    |         ----------------------------------- ^^^^ unsatisfied trait bound
+    |         |
+    |         required by a bound introduced by this call
+    |
+help: the trait `FolderPickerDialogImpl` is not implemented for `FileDialog`
+   --> $CARGO_REGISTRY/rfd-0.17.2/src/file_dialog.rs:20:1
+    |
+ 20 | pub struct FileDialog {
+    | ^^^^^^^^^^^^^^^^^^^^^
+help: this trait has no implementations, consider adding one
+   --> $CARGO_REGISTRY/rfd-0.17.2/src/backend.rs:68:1
+    |
+ 68 | pub trait FolderPickerDialogImpl {
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error[E0277]: the trait bound `FileDialog: FolderPickerDialogImpl` is not satisfied
+   --> $CARGO_REGISTRY/rfd-0.17.2/src/file_dialog.rs:138:46
+    |
+138 |         FolderPickerDialogImpl::pick_folders(self)
+    |         ------------------------------------ ^^^^ unsatisfied trait bound
+    |         |
+    |         required by a bound introduced by this call
+    |
+help: the trait `FolderPickerDialogImpl` is not implemented for `FileDialog`
+   --> $CARGO_REGISTRY/rfd-0.17.2/src/file_dialog.rs:20:1
+    |
+ 20 | pub struct FileDialog {
+    | ^^^^^^^^^^^^^^^^^^^^^
+help: this trait has no implementations, consider adding one
+   --> $CARGO_REGISTRY/rfd-0.17.2/src/backend.rs:68:1
+    |
+ 68 | pub trait FolderPickerDialogImpl {
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error[E0277]: the trait bound `FileDialog: FileSaveDialogImpl` is not satisfied
+   --> $CARGO_REGISTRY/rfd-0.17.2/src/file_dialog.rs:173:39
+    |
+173 |         FileSaveDialogImpl::save_file(self)
+    |         ----------------------------- ^^^^ unsatisfied trait bound
+    |         |
+    |         required by a bound introduced by this call
+    |
+help: the trait `FileSaveDialogImpl` is not implemented for `FileDialog`
+   --> $CARGO_REGISTRY/rfd-0.17.2/src/file_dialog.rs:20:1
+    |
+ 20 | pub struct FileDialog {
+    | ^^^^^^^^^^^^^^^^^^^^^
+help: this trait has no implementations, consider adding one
+   --> $CARGO_REGISTRY/rfd-0.17.2/src/backend.rs:62:1
+    |
+ 62 | pub trait FileSaveDialogImpl {
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error[E0277]: the trait bound `MessageDialog: MessageDialogImpl` is not satisfied
+  --> $CARGO_REGISTRY/rfd-0.17.2/src/message_dialog.rs:83:33
+   |
+83 |         MessageDialogImpl::show(self)
+   |         ----------------------- ^^^^ unsatisfied trait bound
+   |         |
+   |         required by a bound introduced by this call
+   |
+help: the trait `MessageDialogImpl` is not implemented for `MessageDialog`
+  --> $CARGO_REGISTRY/rfd-0.17.2/src/message_dialog.rs:15:1
+   |
+15 | pub struct MessageDialog {
+   | ^^^^^^^^^^^^^^^^^^^^^^^^
+help: this trait has no implementations, consider adding one
+  --> $CARGO_REGISTRY/rfd-0.17.2/src/backend.rs:80:1
+   |
+80 | pub trait MessageDialogImpl {
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Some errors have detailed explanations: E0425, E0433.
+For more information about an error, try `rustc --explain E0425`.
+error: could not compile `arboard` (lib) due to 8 previous errors
+warning: build failed, waiting for other jobs to finish...
+For more information about this error, try `rustc --explain E0277`.
+error: could not compile `rfd` (lib) due to 12 previous errors

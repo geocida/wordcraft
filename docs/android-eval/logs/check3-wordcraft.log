@@ -1,0 +1,81 @@
+warning: patch `egui_demo_lib v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_extras v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_inspection v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_system_font_provider v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+   Compiling ring v0.17.14
+   Compiling khronos-egl v6.0.0
+    Checking percent-encoding v2.3.2
+    Checking allocator-api2 v0.2.21
+    Checking futures-io v0.3.34
+    Checking static_assertions v1.1.0
+    Checking wgpu-types v30.0.1
+    Checking naga v30.0.1
+    Checking hashbrown v0.16.1
+    Checking skrifa v0.47.0
+    Checking thiserror v1.0.69
+    Checking num_enum v0.7.6
+    Checking harfrust v0.13.3
+    Checking egui v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)
+warning: ring@0.17.14: In file included from $CARGO_REGISTRY/ring-0.17.14/crypto/curve25519/curve25519.c:24:
+warning: ring@0.17.14: In file included from $CARGO_REGISTRY/ring-0.17.14/crypto/curve25519/internal.h:20:
+warning: ring@0.17.14: In file included from $CARGO_REGISTRY/ring-0.17.14/crypto/curve25519/../internal.h:20:
+warning: ring@0.17.14: In file included from $CARGO_REGISTRY/ring-0.17.14/include/ring-core/check.h:27:
+warning: ring@0.17.14: In file included from /usr/include/assert.h:35:
+warning: ring@0.17.14: In file included from /usr/include/features.h:394:
+warning: ring@0.17.14: /usr/include/features-time64.h:20:10: fatal error: 'bits/wordsize.h' file not found
+warning: ring@0.17.14:    20 | #include <bits/wordsize.h>
+warning: ring@0.17.14:       |          ^~~~~~~~~~~~~~~~~
+warning: ring@0.17.14: 1 error generated.
+warning: ring@0.17.14: ToolExecError: command did not execute successfully (status code exit status: 1): "aarch64-linux-android-clang" "-O2" "-DANDROID" "-ffunction-sections" "-fdata-sections" "-fPIC" "-I" "$CARGO_REGISTRY/ring-0.17.14/include" "-I" "$CARGO_REGISTRY/ring-0.17.14/pregenerated" "-Wall" "-Wextra" "-fvisibility=hidden" "-std=c1x" "-Wall" "-Wbad-function-cast" "-Wcast-align" "-Wcast-qual" "-Wconversion" "-Wmissing-field-initializers" "-Wmissing-include-dirs" "-Wnested-externs" "-Wredundant-decls" "-Wshadow" "-Wsign-compare" "-Wsign-conversion" "-Wstrict-prototypes" "-Wundef" "-Wuninitialized" "-g3" "-DNDEBUG" "-o" "~/wc-target/aarch64-linux-android/debug/build/ring-cdc693ba16afb96a/out/25ac62e5b3c53843-curve25519.o" "-c" "$CARGO_REGISTRY/ring-0.17.14/crypto/curve25519/curve25519.c"
+warning: ring@0.17.14: In file included from $CARGO_REGISTRY/ring-0.17.14/crypto/fipsmodule/aes/aes_nohw.c:17:
+warning: ring@0.17.14: In file included from $CARGO_REGISTRY/ring-0.17.14/crypto/fipsmodule/aes/../../internal.h:20:
+warning: ring@0.17.14: In file included from $CARGO_REGISTRY/ring-0.17.14/include/ring-core/check.h:27:
+warning: ring@0.17.14: In file included from /usr/include/assert.h:35:
+warning: ring@0.17.14: In file included from /usr/include/features.h:394:
+warning: ring@0.17.14: /usr/include/features-time64.h:20:10: fatal error: 'bits/wordsize.h' file not found
+warning: ring@0.17.14:    20 | #include <bits/wordsize.h>
+[... 355 linhas no total; trecho final abaixo ...]
+  cargo:warning=In file included from /usr/include/assert.h:35:
+  cargo:warning=In file included from /usr/include/features.h:394:
+  cargo:warning=/usr/include/features-time64.h:20:10: fatal error: 'bits/wordsize.h' file not found
+  cargo:warning=   20 | #include <bits/wordsize.h>
+  cargo:warning=      |          ^~~~~~~~~~~~~~~~~
+  cargo:warning=1 error generated.
+  exit status: 1
+  cargo:warning=ToolExecError: command did not execute successfully (status code exit status: 1): "aarch64-linux-android-clang" "-O2" "-DANDROID" "-ffunction-sections" "-fdata-sections" "-fPIC" "-I" "$CARGO_REGISTRY/ring-0.17.14/include" "-I" "$CARGO_REGISTRY/ring-0.17.14/pregenerated" "-Wall" "-Wextra" "-fvisibility=hidden" "-std=c1x" "-Wall" "-Wbad-function-cast" "-Wcast-align" "-Wcast-qual" "-Wconversion" "-Wmissing-field-initializers" "-Wmissing-include-dirs" "-Wnested-externs" "-Wredundant-decls" "-Wshadow" "-Wsign-compare" "-Wsign-conversion" "-Wstrict-prototypes" "-Wundef" "-Wuninitialized" "-g3" "-DNDEBUG" "-o" "~/wc-target/aarch64-linux-android/debug/build/ring-cdc693ba16afb96a/out/d5a9841f3dc6e253-poly1305.o" "-c" "$CARGO_REGISTRY/ring-0.17.14/crypto/poly1305/poly1305.c"
+  cargo:warning=In file included from $CARGO_REGISTRY/ring-0.17.14/crypto/fipsmodule/ec/p256-nistz.c:26:
+  cargo:warning=In file included from $CARGO_REGISTRY/ring-0.17.14/crypto/fipsmodule/ec/../../limbs/limbs.inl:15:
+  cargo:warning=In file included from $CARGO_REGISTRY/ring-0.17.14/crypto/fipsmodule/ec/../../limbs/limbs.h:20:
+  cargo:warning=In file included from $CARGO_REGISTRY/ring-0.17.14/crypto/fipsmodule/ec/../../limbs/../internal.h:20:
+  cargo:warning=In file included from $CARGO_REGISTRY/ring-0.17.14/include/ring-core/check.h:27:
+  cargo:warning=In file included from /usr/include/assert.h:35:
+  cargo:warning=In file included from /usr/include/features.h:394:
+  cargo:warning=/usr/include/features-time64.h:20:10: fatal error: 'bits/wordsize.h' file not found
+  cargo:warning=   20 | #include <bits/wordsize.h>
+  cargo:warning=      |          ^~~~~~~~~~~~~~~~~
+  cargo:warning=1 error generated.
+  exit status: 1
+  cargo:warning=ToolExecError: command did not execute successfully (status code exit status: 1): "aarch64-linux-android-clang" "-O2" "-DANDROID" "-ffunction-sections" "-fdata-sections" "-fPIC" "-I" "$CARGO_REGISTRY/ring-0.17.14/include" "-I" "$CARGO_REGISTRY/ring-0.17.14/pregenerated" "-Wall" "-Wextra" "-fvisibility=hidden" "-std=c1x" "-Wall" "-Wbad-function-cast" "-Wcast-align" "-Wcast-qual" "-Wconversion" "-Wmissing-field-initializers" "-Wmissing-include-dirs" "-Wnested-externs" "-Wredundant-decls" "-Wshadow" "-Wsign-compare" "-Wsign-conversion" "-Wstrict-prototypes" "-Wundef" "-Wuninitialized" "-g3" "-DNDEBUG" "-o" "~/wc-target/aarch64-linux-android/debug/build/ring-cdc693ba16afb96a/out/a0330e891e733f4e-p256-nistz.o" "-c" "$CARGO_REGISTRY/ring-0.17.14/crypto/fipsmodule/ec/p256-nistz.c"
+  exit status: 0
+  exit status: 0
+  exit status: 0
+  exit status: 0
+  exit status: 0
+  exit status: 0
+  exit status: 0
+  exit status: 0
+  exit status: 0
+  exit status: 0
+  exit status: 0
+
+  --- stderr
+
+
+  error occurred in cc-rs: command did not execute successfully (status code exit status: 1): "aarch64-linux-android-clang" "-O2" "-DANDROID" "-ffunction-sections" "-fdata-sections" "-fPIC" "-I" "$CARGO_REGISTRY/ring-0.17.14/include" "-I" "$CARGO_REGISTRY/ring-0.17.14/pregenerated" "-Wall" "-Wextra" "-fvisibility=hidden" "-std=c1x" "-Wall" "-Wbad-function-cast" "-Wcast-align" "-Wcast-qual" "-Wconversion" "-Wmissing-field-initializers" "-Wmissing-include-dirs" "-Wnested-externs" "-Wredundant-decls" "-Wshadow" "-Wsign-compare" "-Wsign-conversion" "-Wstrict-prototypes" "-Wundef" "-Wuninitialized" "-g3" "-DNDEBUG" "-o" "~/wc-target/aarch64-linux-android/debug/build/ring-cdc693ba16afb96a/out/a0330e891e733f4e-p256-nistz.o" "-c" "$CARGO_REGISTRY/ring-0.17.14/crypto/fipsmodule/ec/p256-nistz.c"
+
+
+warning: build failed, waiting for other jobs to finish...

@@ -1,0 +1,81 @@
+warning: patch `egui_demo_lib v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_extras v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_inspection v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_system_font_provider v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+   Compiling ring v0.17.14
+    Checking itertools v0.15.0
+   Compiling num_enum_derive v0.7.6
+    Checking spirv v0.4.0+sdk-1.4.341.0
+   Compiling thiserror-impl v1.0.69
+   Compiling enumflags2_derive v0.7.12
+warning: ring@0.17.14: In file included from $CARGO_REGISTRY/ring-0.17.14/crypto/curve25519/curve25519.c:22:
+warning: ring@0.17.14: In file included from $CARGO_REGISTRY/ring-0.17.14/include/ring-core/mem.h:18:
+warning: ring@0.17.14: In file included from $CARGO_REGISTRY/ring-0.17.14/include/ring-core/base.h:26:
+warning: ring@0.17.14: In file included from /usr/lib/llvm-18/lib/clang/18/include/stdint.h:52:
+warning: ring@0.17.14: /usr/include/stdint.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+warning: ring@0.17.14:    26 | #include <bits/libc-header-start.h>
+warning: ring@0.17.14:       |          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+warning: ring@0.17.14: 1 error generated.
+warning: ring@0.17.14: ToolExecError: command did not execute successfully (status code exit status: 1): "aarch64-linux-android-clang" "-O2" "-DANDROID" "-ffunction-sections" "-fdata-sections" "-fPIC" "-I" "$CARGO_REGISTRY/ring-0.17.14/include" "-I" "$CARGO_REGISTRY/ring-0.17.14/pregenerated" "-Wall" "-Wextra" "-fvisibility=hidden" "-std=c1x" "-Wall" "-Wbad-function-cast" "-Wcast-align" "-Wcast-qual" "-Wconversion" "-Wmissing-field-initializers" "-Wmissing-include-dirs" "-Wnested-externs" "-Wredundant-decls" "-Wshadow" "-Wsign-compare" "-Wsign-conversion" "-Wstrict-prototypes" "-Wundef" "-Wuninitialized" "-g3" "-DNDEBUG" "-o" "~/wc-target/aarch64-linux-android/debug/build/ring-cdc693ba16afb96a/out/25ac62e5b3c53843-curve25519.o" "-c" "$CARGO_REGISTRY/ring-0.17.14/crypto/curve25519/curve25519.c"
+warning: ring@0.17.14: In file included from $CARGO_REGISTRY/ring-0.17.14/crypto/fipsmodule/aes/aes_nohw.c:15:
+warning: ring@0.17.14: In file included from $CARGO_REGISTRY/ring-0.17.14/include/ring-core/aes.h:18:
+warning: ring@0.17.14: In file included from $CARGO_REGISTRY/ring-0.17.14/include/ring-core/base.h:26:
+warning: ring@0.17.14: In file included from /usr/lib/llvm-18/lib/clang/18/include/stdint.h:52:
+warning: ring@0.17.14: /usr/include/stdint.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+warning: ring@0.17.14:    26 | #include <bits/libc-header-start.h>
+warning: ring@0.17.14:       |          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+warning: ring@0.17.14: 1 error generated.
+warning: ring@0.17.14: ToolExecError: command did not execute successfully (status code exit status: 1): "aarch64-linux-android-clang" "-O2" "-DANDROID" "-ffunction-sections" "-fdata-sections" "-fPIC" "-I" "$CARGO_REGISTRY/ring-0.17.14/include" "-I" "$CARGO_REGISTRY/ring-0.17.14/pregenerated" "-Wall" "-Wextra" "-fvisibility=hidden" "-std=c1x" "-Wall" "-Wbad-function-cast" "-Wcast-align" "-Wcast-qual" "-Wconversion" "-Wmissing-field-initializers" "-Wmissing-include-dirs" "-Wnested-externs" "-Wredundant-decls" "-Wshadow" "-Wsign-compare" "-Wsign-conversion" "-Wstrict-prototypes" "-Wundef" "-Wuninitialized" "-g3" "-DNDEBUG" "-o" "~/wc-target/aarch64-linux-android/debug/build/ring-cdc693ba16afb96a/out/0bbbd18bda93c05b-aes_nohw.o" "-c" "$CARGO_REGISTRY/ring-0.17.14/crypto/fipsmodule/aes/aes_nohw.c"
+warning: ring@0.17.14: In file included from $CARGO_REGISTRY/ring-0.17.14/crypto/fipsmodule/bn/montgomery.c:15:
+warning: ring@0.17.14: In file included from $CARGO_REGISTRY/ring-0.17.14/crypto/fipsmodule/bn/internal.h:19:
+warning: ring@0.17.14: In file included from $CARGO_REGISTRY/ring-0.17.14/include/ring-core/base.h:26:
+warning: ring@0.17.14: In file included from /usr/lib/llvm-18/lib/clang/18/include/stdint.h:52:
+warning: ring@0.17.14: /usr/include/stdint.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+warning: ring@0.17.14:    26 | #include <bits/libc-header-start.h>
+warning: ring@0.17.14:       |          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+warning: ring@0.17.14: 1 error generated.
+[... 293 linhas no total; trecho final abaixo ...]
+  cargo:warning=1 error generated.
+  exit status: 1
+  cargo:warning=ToolExecError: command did not execute successfully (status code exit status: 1): "aarch64-linux-android-clang" "-O2" "-DANDROID" "-ffunction-sections" "-fdata-sections" "-fPIC" "-I" "$CARGO_REGISTRY/ring-0.17.14/include" "-I" "$CARGO_REGISTRY/ring-0.17.14/pregenerated" "-Wall" "-Wextra" "-fvisibility=hidden" "-std=c1x" "-Wall" "-Wbad-function-cast" "-Wcast-align" "-Wcast-qual" "-Wconversion" "-Wmissing-field-initializers" "-Wmissing-include-dirs" "-Wnested-externs" "-Wredundant-decls" "-Wshadow" "-Wsign-compare" "-Wsign-conversion" "-Wstrict-prototypes" "-Wundef" "-Wuninitialized" "-g3" "-DNDEBUG" "-o" "~/wc-target/aarch64-linux-android/debug/build/ring-cdc693ba16afb96a/out/a4019cc0736b0423-mem.o" "-c" "$CARGO_REGISTRY/ring-0.17.14/crypto/mem.c"
+  cargo:warning=In file included from $CARGO_REGISTRY/ring-0.17.14/crypto/poly1305/poly1305.c:19:
+  cargo:warning=In file included from $CARGO_REGISTRY/ring-0.17.14/include/ring-core/base.h:26:
+  cargo:warning=In file included from /usr/lib/llvm-18/lib/clang/18/include/stdint.h:52:
+  cargo:warning=/usr/include/stdint.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+  cargo:warning=   26 | #include <bits/libc-header-start.h>
+  cargo:warning=      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+  cargo:warning=1 error generated.
+  exit status: 1
+  cargo:warning=ToolExecError: command did not execute successfully (status code exit status: 1): "aarch64-linux-android-clang" "-O2" "-DANDROID" "-ffunction-sections" "-fdata-sections" "-fPIC" "-I" "$CARGO_REGISTRY/ring-0.17.14/include" "-I" "$CARGO_REGISTRY/ring-0.17.14/pregenerated" "-Wall" "-Wextra" "-fvisibility=hidden" "-std=c1x" "-Wall" "-Wbad-function-cast" "-Wcast-align" "-Wcast-qual" "-Wconversion" "-Wmissing-field-initializers" "-Wmissing-include-dirs" "-Wnested-externs" "-Wredundant-decls" "-Wshadow" "-Wsign-compare" "-Wsign-conversion" "-Wstrict-prototypes" "-Wundef" "-Wuninitialized" "-g3" "-DNDEBUG" "-o" "~/wc-target/aarch64-linux-android/debug/build/ring-cdc693ba16afb96a/out/d5a9841f3dc6e253-poly1305.o" "-c" "$CARGO_REGISTRY/ring-0.17.14/crypto/poly1305/poly1305.c"
+  cargo:warning=In file included from $CARGO_REGISTRY/ring-0.17.14/crypto/fipsmodule/ec/p256-nistz.c:24:
+  cargo:warning=In file included from $CARGO_REGISTRY/ring-0.17.14/include/ring-core/base.h:26:
+  cargo:warning=In file included from /usr/lib/llvm-18/lib/clang/18/include/stdint.h:52:
+  cargo:warning=/usr/include/stdint.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+  cargo:warning=   26 | #include <bits/libc-header-start.h>
+  cargo:warning=      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+  cargo:warning=1 error generated.
+  exit status: 1
+  cargo:warning=ToolExecError: command did not execute successfully (status code exit status: 1): "aarch64-linux-android-clang" "-O2" "-DANDROID" "-ffunction-sections" "-fdata-sections" "-fPIC" "-I" "$CARGO_REGISTRY/ring-0.17.14/include" "-I" "$CARGO_REGISTRY/ring-0.17.14/pregenerated" "-Wall" "-Wextra" "-fvisibility=hidden" "-std=c1x" "-Wall" "-Wbad-function-cast" "-Wcast-align" "-Wcast-qual" "-Wconversion" "-Wmissing-field-initializers" "-Wmissing-include-dirs" "-Wnested-externs" "-Wredundant-decls" "-Wshadow" "-Wsign-compare" "-Wsign-conversion" "-Wstrict-prototypes" "-Wundef" "-Wuninitialized" "-g3" "-DNDEBUG" "-o" "~/wc-target/aarch64-linux-android/debug/build/ring-cdc693ba16afb96a/out/a0330e891e733f4e-p256-nistz.o" "-c" "$CARGO_REGISTRY/ring-0.17.14/crypto/fipsmodule/ec/p256-nistz.c"
+  exit status: 0
+  exit status: 0
+  exit status: 0
+  exit status: 0
+  exit status: 0
+  exit status: 0
+  exit status: 0
+  exit status: 0
+  exit status: 0
+  exit status: 0
+  exit status: 0
+
+  --- stderr
+
+
+  error occurred in cc-rs: command did not execute successfully (status code exit status: 1): "aarch64-linux-android-clang" "-O2" "-DANDROID" "-ffunction-sections" "-fdata-sections" "-fPIC" "-I" "$CARGO_REGISTRY/ring-0.17.14/include" "-I" "$CARGO_REGISTRY/ring-0.17.14/pregenerated" "-Wall" "-Wextra" "-fvisibility=hidden" "-std=c1x" "-Wall" "-Wbad-function-cast" "-Wcast-align" "-Wcast-qual" "-Wconversion" "-Wmissing-field-initializers" "-Wmissing-include-dirs" "-Wnested-externs" "-Wredundant-decls" "-Wshadow" "-Wsign-compare" "-Wsign-conversion" "-Wstrict-prototypes" "-Wundef" "-Wuninitialized" "-g3" "-DNDEBUG" "-o" "~/wc-target/aarch64-linux-android/debug/build/ring-cdc693ba16afb96a/out/a0330e891e733f4e-p256-nistz.o" "-c" "$CARGO_REGISTRY/ring-0.17.14/crypto/fipsmodule/ec/p256-nistz.c"
+
+
+warning: build failed, waiting for other jobs to finish...

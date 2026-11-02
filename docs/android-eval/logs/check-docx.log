@@ -1,0 +1,27 @@
+warning: patch `egui_demo_lib v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_extras v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_inspection v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_system_font_provider v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+   Compiling libc v0.2.191
+   Compiling num-traits v0.2.19
+    Checking simd-adler32 v0.3.10
+    Checking hashbrown v0.17.1
+    Checking zlib-rs v0.6.8
+    Checking indexmap v2.14.2
+    Checking zopfli v0.8.3
+    Checking serde_json v1.0.154
+    Checking chrono v0.4.45
+    Checking flate2 v1.1.10
+    Checking zip v3.0.0
+    Checking cpufeatures v0.3.1
+    Checking sha1 v0.11.0
+    Checking aes v0.9.3
+    Checking wordcraft-doc v0.14.0 (~/wordcraft/crates/doc)
+    Checking sha2 v0.11.1
+    Checking getrandom v0.3.4
+    Checking wordcraft-docx v0.14.0 (~/wordcraft/crates/docx)
+    Finished `dev` profile [optimized + debuginfo] target(s) in 11.01s

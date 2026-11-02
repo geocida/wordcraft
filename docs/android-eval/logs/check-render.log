@@ -1,0 +1,17 @@
+warning: patch `egui_demo_lib v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_extras v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_inspection v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_system_font_provider v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+    Checking color v0.3.3
+    Checking read-fonts v0.41.0
+    Checking peniko v0.6.1
+    Checking vello_common v0.2.0
+    Checking skrifa v0.44.0
+    Checking glifo v0.3.0
+    Checking vello_cpu v0.2.0
+    Checking wordcraft-render v0.14.0 (~/wordcraft/crates/render)
+    Finished `dev` profile [optimized + debuginfo] target(s) in 8.72s

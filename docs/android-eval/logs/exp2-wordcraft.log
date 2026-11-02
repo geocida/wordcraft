@@ -1,0 +1,105 @@
+warning: patch `egui_demo_lib v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_extras v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_inspection v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_system_font_provider v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+   Compiling android-activity v0.6.1
+    Checking tracing v0.1.44
+   Compiling winit v0.30.13 (https://github.com/storytold/winit.git?rev=a517b3846ee8457d84ee4975110bfda6797c44dc#a517b384)
+    Checking idna_adapter v1.2.2
+   Compiling quick-xml v0.41.0
+   Compiling wgpu-core v30.0.1
+    Checking fixed_decimal v0.7.3
+   Compiling async-io v2.6.0
+   Compiling wayland-client v0.31.15
+    Checking smol_str v0.2.2
+    Checking downcast-rs v1.2.1
+   Compiling litrs v1.0.0
+    Checking slab v0.4.12
+    Checking dpi v0.1.2
+    Checking cursor-icon v1.2.0
+    Checking percent-encoding v2.3.2
+    Checking form_urlencoded v1.2.2
+    Checking wayland-backend v0.3.17
+    Checking idna v1.1.0
+    Checking icu_locale_fallback v2.3.0
+    Checking syn v3.0.6
+    Checking wgpu-core-deps-windows-linux-android v30.0.1
+    Checking craft-pdf v0.1.0 (https://github.com/storytold/craft-libs?rev=92d392cff132eaf53e13afff77f38b5c11b73aa0#92d392cf)
+   Compiling document-features v0.2.12
+    Checking chardetng v1.0.0
+   Compiling enumflags2 v0.7.12
+   Compiling wayland-scanner v0.31.11
+   Compiling zcheapstr v1.1.0
+    Checking polling v3.11.0
+   Compiling wgpu v30.0.1
+   Compiling endi v1.1.1
+    Checking winnow v1.0.4
+    Checking foldhash v0.1.5
+    Checking hashbrown v0.15.5
+    Checking zvariant_utils v4.2.0
+   Compiling zvariant v5.15.0
+   Compiling serde_json v1.0.154
+    Checking wordcraft-docx v0.14.0 (~/wc-exp/crates/docx)
+    Checking wordcraft-formats v0.14.0 (~/wc-exp/crates/formats)
+    Checking wordcraft-pdf v0.14.0 (~/wc-exp/crates/pdf)
+    Checking icu_provider_adapters v2.3.0
+    Checking url v2.5.8
+    Checking icu_plurals v2.3.0
+    Checking icu_decimal v2.3.0
+    Checking wordcraft-docbin v0.14.0 (~/wc-exp/crates/docbin)
+    Checking wordcraft-render v0.14.0 (~/wc-exp/crates/render)
+    Checking signal-hook-registry v1.4.8
+    Checking icu_provider_blob v2.3.0
+    Checking atomic-waker v1.1.2
+    Checking async-task v4.7.1
+    Checking fixedbitset v0.5.7
+    Checking wordcraft-engine v0.14.0 (~/wc-exp/crates/engine)
+    Checking petgraph v0.8.3
+    Checking piper v0.2.5
+    Checking craft-i18n v0.1.0 (https://github.com/storytold/craft-libs?rev=92d392cff132eaf53e13afff77f38b5c11b73aa0#92d392cf)
+    Checking async-signal v0.2.14
+    Checking webbrowser v1.2.4
+    Checking wayland-protocols v0.32.13
+   Compiling wordcraft-ui-egui v0.14.0 (~/wc-exp/crates/ui-egui)
+   Compiling zbus_names v4.3.4
+    Checking accesskit_winit v0.34.1
+    Checking async-lock v3.4.2
+    Checking async-channel v2.5.0
+   Compiling winresource v0.1.34
+    Checking type-map v0.5.1
+    Checking nom v8.0.0
+   Compiling rfd v0.17.2
+    Checking craft-ui v0.1.0 (https://github.com/storytold/craft-libs?rev=92d392cff132eaf53e13afff77f38b5c11b73aa0#92d392cf)
+    Checking tree_magic_mini v3.2.2
+   Compiling wordcraft v0.14.0 (~/wc-exp/apps/wordcraft)
+    Checking wayland-protocols-wlr v0.3.12
+    Checking egui-wgpu v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)
+    Checking blocking v1.7.0
+   Compiling zbus_macros v5.19.0
+    Checking async-process v2.5.0
+    Checking egui-winit v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)
+    Checking async-executor v1.14.0
+    Checking wordcraft-zotero v0.14.0 (~/wc-exp/crates/zotero)
+    Checking craft-window v0.1.0 (https://github.com/storytold/craft-libs?rev=92d392cff132eaf53e13afff77f38b5c11b73aa0#92d392cf)
+    Checking async-broadcast v0.7.2
+    Checking ordered-stream v0.2.0
+    Checking os_pipe v1.2.3
+   Compiling async-trait v0.1.92
+   Compiling async-recursion v1.2.0
+   Compiling serde_repr v0.1.21
+    Checking hex v0.4.3
+    Checking craft-winprint-gdi v0.1.0 (https://github.com/storytold/winprint.rs?rev=417ac3c4d14d3da5485a99c7d5ce8f05664ec312#417ac3c4)
+    Checking pollster v1.0.1
+    Checking eframe v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)
+error: `accesskit` feature is only available with `android-game-activity`
+   --> $CARGO_GIT/egui-057e9a0485eda407/6d518fc/crates/eframe/src/lib.rs:153:1
+    |
+153 | compile_error!("`accesskit` feature is only available with `android-game-activity`");
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: could not compile `eframe` (lib) due to 1 previous error
+warning: build failed, waiting for other jobs to finish...

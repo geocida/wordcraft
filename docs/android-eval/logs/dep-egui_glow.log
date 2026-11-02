@@ -1,0 +1,81 @@
+warning: patch `egui_demo_lib v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_extras v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_inspection v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_system_font_provider v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+
+thread 'main' (8190) panicked at src/tools/cargo/src/cargo/core/resolver/features.rs:325:13:
+did not find features for (PackageId { name: "egui_glow", version: "0.37.0", source: "https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7" }, NormalOrDev) within activated_features:
+[
+    (
+        PackageId {
+            name: "cmov",
+            version: "0.5.4",
+            source: "registry `crates-io`",
+        },
+        NormalOrDev,
+    ),
+    (
+        PackageId {
+            name: "icu_provider",
+            version: "2.3.1",
+            source: "registry `crates-io`",
+        },
+        NormalOrDev,
+    ),
+    (
+        PackageId {
+            name: "half",
+            version: "2.7.1",
+            source: "registry `crates-io`",
+        },
+        NormalOrDev,
+    ),
+    (
+        PackageId {
+            name: "pin-project-lite",
+            version: "0.2.17",
+[... 3173 linhas no total; trecho final abaixo ...]
+        PackageId {
+            name: "jni-sys-macros",
+            version: "0.4.1",
+            source: "registry `crates-io`",
+        },
+        HostDep,
+    ),
+    (
+        PackageId {
+            name: "moxcms",
+            version: "0.8.1",
+            source: "registry `crates-io`",
+        },
+        NormalOrDev,
+    ),
+    (
+        PackageId {
+            name: "shlex",
+            version: "2.0.1",
+            source: "registry `crates-io`",
+        },
+        HostDep,
+    ),
+]
+stack backtrace:
+   0: __rustc::rust_begin_unwind
+             at /rustc/2d8144b7880597b6e6d3dfd63a9a9efae3f533d3/library/std/src/panicking.rs:689:5
+   1: core::panicking::panic_fmt
+             at /rustc/2d8144b7880597b6e6d3dfd63a9a9efae3f533d3/library/core/src/panicking.rs:80:14
+   2: <cargo::core::resolver::features::ResolvedFeatures>::activated_features
+   3: <cargo::ops::cargo_compile::unit_generator::UnitGenerator>::proposals_to_units
+   4: <cargo::ops::cargo_compile::unit_generator::UnitGenerator>::generate_root_units
+   5: cargo::ops::cargo_compile::create_bcx
+   6: cargo::ops::cargo_compile::compile_ws
+   7: cargo::ops::cargo_compile::compile_with_exec
+   8: cargo::ops::cargo_compile::compile
+   9: cargo::commands::check::exec
+  10: <cargo::cli::Exec>::exec
+  11: cargo::main
+note: Some details are omitted, run with `RUST_BACKTRACE=full` for a verbose backtrace.
