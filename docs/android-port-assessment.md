@@ -30,9 +30,10 @@ Por quê:
 1. **O núcleo é portável.** `wordcraft-doc`, `-engine`, `-layout`, `-docx`, `-pdf`, `-render` e
    `wordcraft-cli` passam em `cargo check --target aarch64-linux-android` sem nenhuma mudança
    (logs `check-*.log`, todos com "Finished"). É a parte mais cara do produto e não pede nada.
-2. **A interface compila com uma mudança pequena.** `wordcraft-ui-egui` falha só porque o
-   `craft-update` puxa o `ring` (código C), que exige o NDK (`check-wordcraft-ui-egui.log`). Com o
-   `craft-update` fora do grafo do Android, compila (`exp-ui-egui.log`, exit 0).
+2. **A interface compila sem mudanças.** Com o NDK r29, `wordcraft-ui-egui` passa em
+   `cargo ndk check`, inclusive o `ring` (código C) que o `craft-update` puxa
+   (`ndk-check-ui-egui.log`). Sem o NDK, só falhava nesse ponto (`check-wordcraft-ui-egui.log`).
+   O `wordcraft-cli` liga como executável Android (`ndk-build-cli.log`).
 3. **Os bloqueios estão na camada de plataforma do app desktop.** `rfd` e `arboard` não têm backend
    Android (`exp4-wordcraft.log`). O `eframe` exige escolher NativeActivity ou GameActivity, e o
    `accesskit` (acessibilidade) só funciona com GameActivity (`eframe/src/lib.rs:153` do fork).
@@ -79,9 +80,11 @@ O que mudaria a recomendação para GO:
 
 ## 2. Método e limites desta sessão
 
-1. **Sem NDK.** O download do NDK foi negado pela política de rede da sessão
-   (`dl.google.com:443`, resposta 403 do proxy). Por isso a Fase 2 usou `cargo check` (análise de
-   tipos, sem ligação). Código C e C++ não foi compilado.
+1. **NDK só na segunda rodada.** Em 2026-11-02 o download do NDK foi negado pela política de
+   rede da sessão (`dl.google.com:443`, resposta 403 do proxy), e a Fase 2 usou `cargo check`
+   (análise de tipos, sem ligação). Em 2026-11-03, com o domínio liberado, instalei o NDK r29
+   (`29.0.14206865`), o SDK (platform-tools, build-tools 35.0.1, android-35) e o cargo-ndk 4.1.2,
+   e refiz os passos que dependiam de C e C++ (seção 4, linhas marcadas "NDK").
 2. **Tentativa de contornar só para o C:** um wrapper com o clang 18 do sistema
    (`--target=aarch64-linux-android26 -ffreestanding`) falhou por falta dos headers do Bionic
    (`check3-wordcraft-ui-egui.log`: "fatal error: 'bits/wordsize.h' file not found"). Não insisti.
@@ -186,8 +189,9 @@ aceito pelos mantenedores antes de qualquer port.
 
 ## 4. Fase 2: compilação cruzada
 
-Comando: `cargo check --target aarch64-linux-android -p <pacote>`, com `CARGO_TARGET_DIR`
-separado. Sem NDK (seção 2).
+Comando da primeira rodada: `cargo check --target aarch64-linux-android -p <pacote>`, sem NDK.
+Segunda rodada (linhas "NDK"): `cargo ndk -t arm64-v8a -P 28 check|build -p <pacote>`, com o
+NDK r29 (seção 2).
 
 | Ordem | Pacote | Resultado | Tempo | Log | Classe da falha |
 |---|---|---|---|---|---|
@@ -198,19 +202,25 @@ separado. Sem NDK (seção 2).
 | 5 | `wordcraft-pdf` | passa | 11 s | `check-pdf.log` | |
 | 6 | `wordcraft-render` | passa | 9 s | `check-render.log` | |
 | 7 | `wordcraft-cli` | passa | 1 s (dependências já checadas) | `check-wordcraft-cli.log` | |
-| 8 | `wordcraft-ui-egui` | falha no `ring` (build script C: "failed to find tool aarch64-linux-android-clang") | 16 s | `check-wordcraft-ui-egui.log` | ambiente (falta NDK). Com NDK, o `ring` costuma compilar para Android; não verificado. Mesmo assim, **trivial (cfg)**: retirar o `craft-update` no Android |
+| 8 | `wordcraft-ui-egui` | falha no `ring` (build script C: "failed to find tool aarch64-linux-android-clang") | 16 s | `check-wordcraft-ui-egui.log` | ambiente (falta NDK); ver 8-NDK |
+| 8-NDK | `wordcraft-ui-egui`, sem mudanças, com NDK | **passa**: "Compiling ring v0.17.14" e "Finished" | 104 s | `ndk-check-ui-egui.log` | nenhuma. O `ring` compila para Android. Retirar o `craft-update` no Android continua recomendado (não há o que atualizar fora da loja), mas deixa de ser bloqueio |
 | 8b | `wordcraft-ui-egui` sem `craft-update` | passa | 28 s | `exp-ui-egui.log` | |
 | 9 | `wordcraft` (app desktop) | falha no `ring` | 76 s | `check-wordcraft.log` | como o 8 |
+| 9-NDK | `wordcraft`, sem mudanças, com NDK | falha: "Either game-activity or native-activity must be enabled" | 99 s | `ndk-check-wordcraft.log` | **trivial (cfg)**: o mesmo do 9b; o `ring` já não pesa |
 | 9b | `wordcraft` sem `craft-update` | falha: "Either game-activity or native-activity must be enabled" no `android-activity` | 19 s | `exp-wordcraft.log` | **trivial (cfg)**: ligar o feature |
 | 9c | com `android-native-activity` | falha: "`accesskit` feature is only available with `android-game-activity`" | 30 s | `exp2-wordcraft.log` | **estrutural**: escolha de atividade (3.5) |
-| 9d | com `android-game-activity` | falha: falta `aarch64-linux-android-clang++` (o GameActivity compila C++) | 4 s | `exp3-wordcraft.log` | ambiente (falta NDK) |
+| 9d | com `android-game-activity` | falha: falta `aarch64-linux-android-clang++` (o GameActivity compila C++) | 4 s | `exp3-wordcraft.log` | ambiente (falta NDK); ver 9d-NDK |
+| 9d-NDK | patch do experimento, `android-game-activity` e `accesskit` de volta, com NDK | o GameActivity compila ("Compiling android-activity v0.6.1") e o `accesskit_winit` passa; para só em `rfd` (12 erros) | 38 s | `ndk-exp-game-activity.log` | **moderada**: o mesmo do 9e. A escolha GameActivity com acessibilidade compila |
 | 9e | NativeActivity sem `accesskit` | falha em `rfd` (12 erros) e `arboard` (8 erros) | 8 s | `exp4-wordcraft.log` | **moderada**: substituir os crates por código JNI próprio |
 
 Os avisos nos logs 1 a 7 são só "patch ... was not used in the crate graph" (quatro patches de
 crates do egui que esses pacotes não usam).
 
-Aviso: `cargo check` não prova que o binário liga nem que roda. Ligação e execução ficam para a
-sessão local com NDK.
+Ligação: com o NDK, `cargo ndk -t arm64-v8a -P 28 build --release -p wordcraft-cli` passou em
+246 s (`ndk-build-cli.log`) e gerou um executável Android de 42 MB sem strip ("ELF 64-bit LSB pie
+executable, ARM aarch64 ... interpreter /system/bin/linker64", saída do `file`). Isso prova que o
+núcleo inteiro (doc, engine, layout, docx, pdf, render, formats, mcp) liga para Android. Não prova
+que roda: não foi executado no aparelho.
 
 ## 5. Fase 3: protótipo (estado)
 
@@ -241,7 +251,7 @@ julgamento, inclui testes no aparelho.
 
 | # | Item | Evidência | Gravidade | Solução proposta | Horas |
 |---|---|---|---|---|---|
-| 1 | `craft-update` puxa `ring` (C) e não tem função no Android | `check-wordcraft-ui-egui.log`; `exp-ui-egui.log` | trivial | cfg `not(any(wasm32, android))` no `ui-egui` (experimento já feito, ver patch) | 2 a 4 |
+| 1 | `craft-update` não tem função no Android (o `ring` que ele puxa compila com o NDK) | `ndk-check-ui-egui.log`; `exp-ui-egui.log` | trivial | cfg `not(any(wasm32, android))` no `ui-egui` (experimento já feito, ver patch) | 2 a 4 |
 | 2 | Bloco `all(unix, not(macos))` puxa `winit/x11`, `zbus`, `wl-clipboard-rs` | `apps/wordcraft/Cargo.toml:52-60` | trivial | trocar por `all(unix, not(any(macos, android)))` nos manifestos e nos 14 blocos de código | 4 a 8 |
 | 3 | `main.rs` usa `winit::platform::x11` | `apps/wordcraft/src/main.rs:462-468`; `winit/src/platform/mod.rs:21-22` | trivial | cfg; inferido, não compilado | incluído no 2 |
 | 4 | Ponto de entrada Android e `cdylib` | teste `no_mangle` (3.5, fato 2) | estrutural (governança) | novo crate `apps/wordcraft-android` ou crate externo (3.5, opção 1); projeto Gradle | 8 a 16 |
@@ -258,7 +268,7 @@ julgamento, inclui testes no aparelho.
 | 15 | Tinta sem pressão | `ink.rs:82`; `freeform.rs:71-72`; `draw.rs:431` | moderada | modelo de ponto com pressão e escrita no InkML (seção 7) | 16 a 32 |
 | 16 | Ciclo de vida (segundo plano, rotação, tela dividida) | não verificado (roteiro, L1 a L7) | não verificado | depende do resultado no aparelho | não estimado |
 | 17 | Interface feita para mouse (faixa de opções, alvos pequenos) | não verificado | não verificado | decisão de produto | não estimado |
-| 18 | NDK indisponível nesta sessão | 403 em `dl.google.com` | ambiente | sessão local no WSL | 0 |
+| 18 | NDK indisponível na primeira rodada | 403 em `dl.google.com` (2026-11-02); resolvido em 2026-11-03 (seção 2) | ambiente, resolvido | nenhuma | 0 |
 
 ## 7. S Pen
 
@@ -363,8 +373,7 @@ caminho de menor custo para o S Pen passa a ser ler `pressure` e `pointerType` n
 
 1. Rodar a Fase 3 no aparelho (sessão local no WSL), preencher o roteiro e trazer os logs de
    `medicoes/` para cá.
-2. Com NDK: ligar a `libprobe.so`, gerar o APK e confirmar que o `ring` compila para Android
-   (se o `craft-update` for mantido em algum alvo Android, o que não recomendo).
+2. Feito em 2026-11-03: o `ring` compila para Android com o NDK r29 (seção 4, linha 8-NDK).
 3. Opcional (Fase 3, item 6): ponto de entrada Android para o `wordcraft-ui-egui` com o patch
    do experimento, documento de exemplo, rolagem e digitação.
 4. Atualizar as seções 1, 6, 7 e 9 com os resultados e trocar "provisório" por definitivo.

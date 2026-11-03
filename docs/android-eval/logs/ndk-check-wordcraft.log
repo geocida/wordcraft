@@ -1,0 +1,229 @@
+    Building arm64-v8a (aarch64-linux-android)
+warning: patch `egui_demo_lib v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_extras v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_inspection v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_system_font_provider v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+   Compiling syn v3.0.6
+   Compiling syn v2.0.119
+   Compiling libm v0.2.16
+   Compiling num-traits v0.2.19
+    Checking hashbrown v0.17.1
+   Compiling serde_core v1.0.229
+   Compiling libc v0.2.191
+   Compiling winnow v1.0.4
+   Compiling jobserver v0.1.35
+   Compiling synstructure v0.14.0
+   Compiling cc v1.6.0
+   Compiling toml_parser v1.1.3+spec-1.1.0
+   Compiling toml_datetime v1.1.1+spec-1.1.0
+    Checking indexmap v2.14.2
+   Compiling cfg_aliases v0.2.2
+    Checking pin-project-lite v0.2.17
+   Compiling equivalent v1.0.2
+    Checking uuid v1.27.0
+    Checking euclid v0.22.14
+    Checking libloading v0.8.9
+    Checking moxcms v0.8.1
+   Compiling toml_edit v0.25.15+spec-1.1.0
+   Compiling proc-macro-crate v3.5.0
+    Checking guillotiere v0.7.0
+    Checking errno v0.3.14
+   Compiling rustix v1.1.5
+    Checking unicode-ident v1.0.26
+    Checking linux-raw-sys v0.12.1
+   Compiling jni-sys v0.3.1
+    Checking raw-window-handle v0.6.2
+   Compiling pkg-config v0.3.34
+   Compiling wayland-sys v0.31.11
+   Compiling jni v0.22.4
+    Checking dlib v0.5.3
+   Compiling serde v1.0.229
+    Checking parking v2.2.1
+   Compiling memchr v2.8.3
+    Checking futures-core v0.3.34
+    Checking rustc-hash v1.1.0
+    Checking accesskit v0.25.1
+   Compiling naga v30.0.1
+   Compiling ring v0.17.14
+    Checking bit-vec v0.9.1
+   Compiling ash v0.38.0+1.3.281
+   Compiling thiserror v1.0.69
+    Checking unicode-width v0.2.2
+    Checking codespan-reporting v0.13.1
+    Checking bit-set v0.10.0
+    Checking chrono v0.4.45
+    Checking spirv v0.4.0+sdk-1.4.341.0
+    Checking allocator-api2 v0.2.21
+    Checking static_assertions v1.1.0
+   Compiling khronos-egl v6.0.0
+    Checking futures-io v0.3.34
+    Checking hashbrown v0.16.1
+   Compiling zerocopy-derive v0.8.61
+   Compiling jni-sys-macros v0.4.1
+   Compiling serde_derive v1.0.229
+   Compiling thiserror-impl v2.0.21
+   Compiling bytemuck_derive v1.12.1
+    Checking bytemuck v1.25.2
+   Compiling zerofrom-derive v0.1.8
+    Checking zerocopy v0.8.61
+    Checking thiserror v2.0.21
+   Compiling yoke-derive v0.8.4
+    Checking font-types v0.12.6
+    Checking half v2.7.1
+   Compiling zerovec-derive v0.11.7
+    Checking smallvec v1.16.2
+    Checking kurbo v0.13.1
+   Compiling displaydoc v0.2.7
+    Checking jni-sys v0.4.1
+    Checking cobs v0.3.0
+    Checking postcard v1.1.3
+    Checking read-fonts v0.41.0
+    Checking color v0.3.3
+    Checking peniko v0.6.1
+    Checking tiff v0.11.3
+    Checking image v0.25.10
+    Checking vello_common v0.2.0
+    Checking parking_lot_core v0.9.12
+    Checking parking_lot v0.12.5
+   Compiling jni-macros v0.22.4
+    Checking ndk-sys v0.6.0+11769913
+    Checking zerofrom v0.1.8
+    Checking yoke v0.8.4
+    Checking wordcraft-geom v0.14.0 (~/wordcraft/crates/geom)
+    Checking zerovec v0.11.9
+    Checking font-types v0.11.3
+    Checking tinystr v0.8.4
+    Checking icu_locale_core v2.3.0
+    Checking zerotrie v0.2.5
+    Checking skrifa v0.44.0
+    Checking potential_utf v0.1.6
+    Checking icu_collections v2.3.0
+    Checking emath v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)
+    Checking icu_provider v2.3.1
+    Checking ecolor v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)
+    Checking harfrust v0.12.0
+    Checking icu_properties v2.3.0
+    Checking icu_normalizer v2.3.0
+    Checking glifo v0.3.0
+    Checking read-fonts v0.39.2
+    Checking vello_cpu v0.2.0
+    Checking wordcraft-doc v0.14.0 (~/wordcraft/crates/doc)
+    Checking ahash v0.8.12
+    Checking naga-types v30.0.1
+    Checking epaint v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)
+    Checking read-fonts v0.43.3
+    Checking read-fonts v0.44.0
+   Compiling thiserror-impl v1.0.69
+   Compiling enumflags2_derive v0.7.12
+   Compiling num_enum_derive v0.7.6
+    Checking skrifa v0.47.0
+    Checking harfrust v0.13.3
+    Checking skrifa v0.42.1
+    Checking write-fonts v0.48.1
+    Checking egui v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)
+    Checking num_enum v0.7.6
+    Checking wgpu-types v30.0.1
+   Compiling zvariant_utils v4.2.0
+    Checking wordcraft-metafile v0.14.0 (~/wordcraft/crates/metafile)
+   Compiling tracing-attributes v0.1.31
+    Checking event-listener v5.4.2
+   Compiling wgpu-hal v30.0.1
+   Compiling android-activity v0.6.1
+   Compiling serde_spanned v1.1.1
+    Checking concurrent-queue v2.5.0
+    Checking tracing-core v0.1.36
+   Compiling proc-macro2 v1.0.107
+    Checking ndk-context v0.1.1
+    Checking presser v0.3.1
+    Checking wordcraft-fonts v0.14.0 (~/wordcraft/crates/fonts)
+    Checking cfb v0.15.0
+    Checking tiny-skia-path v0.12.0
+   Compiling toml v1.1.6+spec-1.1.0
+    Checking gpu-allocator v0.28.0
+   Compiling zvariant_derive v5.15.0
+    Checking event-listener-strategy v0.5.4
+    Checking wgpu-naga-bridge v30.0.1
+    Checking ndk v0.9.0
+    Checking subsetter v0.2.6
+    Checking futures-lite v2.6.1
+    Checking tracing v0.1.44
+   Compiling winit v0.30.13 (https://github.com/storytold/winit.git?rev=a517b3846ee8457d84ee4975110bfda6797c44dc#a517b384)
+   Compiling wayland-backend v0.3.17
+    Checking ordered-float v5.5.0
+    Checking float-cmp v0.9.0
+   Compiling quote v1.0.47
+    Checking glow v0.17.0
+    Checking renderdoc-sys v1.1.0
+    Checking android-properties v0.2.2
+    Checking krilla v0.8.2 (https://github.com/storytold/craft-libs?rev=92d392cff132eaf53e13afff77f38b5c11b73aa0#92d392cf)
+error[E0583]: file not found for module `activity_impl`
+   --> $CARGO_REGISTRY/android-activity-0.6.1/src/lib.rs:381:1
+    |
+381 | pub(crate) mod activity_impl;
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+    = help: to create the module `activity_impl`, create file "$CARGO_REGISTRY/android-activity-0.6.1/src/activity_impl.rs" or "$CARGO_REGISTRY/android-activity-0.6.1/src/activity_impl/mod.rs"
+    = note: if there is a `mod activity_impl` elsewhere in the crate already, import it with `use crate::...` instead
+
+error: Either "game-activity" or "native-activity" must be enabled as features
+       
+       If you have set one of these features then this error indicates that Cargo is trying to
+       link together multiple implementations of android-activity (with incompatible versions)
+       which is not supported.
+       
+       Since android-activity is responsible for the `android_main` entrypoint of your application
+       then there can only be a single implementation of android-activity linked with your application.
+       
+       You can use `cargo tree` (e.g. via `cargo ndk -t arm64-v8a tree`) to identify why multiple
+       versions have been resolved.
+       
+       You may need to add a `[patch]` into your Cargo.toml to ensure a specific version of
+       android-activity is used across all of your application's crates.
+   --> $CARGO_REGISTRY/android-activity-0.6.1/src/lib.rs:352:1
+    |
+352 | / compile_error!(
+353 | |     r#"Either "game-activity" or "native-activity" must be enabled as features
+354 | |
+355 | | If you have set one of these features then this error indicates that Cargo is trying to
+...   |
+366 | | android-activity is used across all of your application's crates."#
+367 | | );
+    | |_^
+
+   Compiling rustls v0.23.46
+    Checking wordcraft-layout v0.14.0 (~/wordcraft/crates/layout)
+error[E0425]: cannot find type `PointerImpl` in this scope
+    --> $CARGO_REGISTRY/android-activity-0.6.1/src/input.rs:1343:23
+     |
+1343 |     pub(crate) inner: PointerImpl<'a>,
+     |                       ^^^^^^^^^^^ not found in this scope
+
+error[E0425]: cannot find type `PointersIterImpl` in this scope
+    --> $CARGO_REGISTRY/android-activity-0.6.1/src/input.rs:1440:23
+     |
+1440 |     pub(crate) inner: PointersIterImpl<'a>,
+     |                       ^^^^^^^^^^^^^^^^ not found in this scope
+
+error[E0425]: cannot find type `PointerHistoryIterImpl` in this scope
+    --> $CARGO_REGISTRY/android-activity-0.6.1/src/input.rs:1468:23
+     |
+1468 |     pub(crate) inner: PointerHistoryIterImpl<'a>,
+     |                       ^^^^^^^^^^^^^^^^^^^^^^ not found in this scope
+
+error[E0425]: cannot find type `HistoricalPointerImpl` in this scope
+    --> $CARGO_REGISTRY/android-activity-0.6.1/src/input.rs:1490:23
+     |
+1490 |     pub(crate) inner: HistoricalPointerImpl<'a>,
+     |                       ^^^^^^^^^^^^^^^^^^^^^ not found in this scope
+
+Some errors have detailed explanations: E0425, E0583.
+For more information about an error, try `rustc --explain E0425`.
+error: could not compile `android-activity` (lib) due to 6 previous errors
+warning: build failed, waiting for other jobs to finish...
+note: If the build failed due to a missing target, you can run this command:
+note: 
+note:     rustup target install aarch64-linux-android
